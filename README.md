@@ -1,5 +1,5 @@
 
-ToDo List Application 
+ToDoIt List Application 
 
 ====================
 
@@ -25,3 +25,4 @@ JQuery
 
 Mockup: 
 MockFlow
+LucidChart ERD
