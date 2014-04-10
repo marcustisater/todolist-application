@@ -21,7 +21,6 @@ SQL
 Tools and Frameworks:
 Compass
 Breakpoints
-BootsTrap
 JQuery
 
 Mockup: 
