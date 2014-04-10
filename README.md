@@ -12,14 +12,17 @@ and much more...
 My Idea:
 To create a modern website with a lot design and a easy functional website. Don't over do it!
 
-Build:
+Builds:
 Ruby on Rails
-HTML5 with boilerplate
 CSS3 with SASS
 Javascript with AJAX
 SQL 
 
-Tools:
+Tools and Frameworks:
 Compass
-Breakpoint
+Breakpoints
+BootsTrap
 JQuery
+
+Mockup: 
+MockFlow
