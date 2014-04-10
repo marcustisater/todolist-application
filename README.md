@@ -1,4 +1,25 @@
-todolist-application
+
+ToDo List Application 
+
 ====================
 
-ToDo List Application
+Feature:
+Register a account & Log In
+Create a task 
+Check of task
+and much more...
+
+My Idea:
+To create a modern website with a lot design and a easy functional website. Don't over do it!
+
+Build:
+Ruby on Rails
+HTML5 with boilerplate
+CSS3 with SASS
+Javascript with AJAX
+SQL 
+
+Tools:
+Compass
+Breakpoint
+JQuery
