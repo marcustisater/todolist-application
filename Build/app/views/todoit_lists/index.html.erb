@@ -1,0 +1,31 @@
+<h1>Listing todoit_lists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Text</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todoit_lists.each do |todoit_list| %>
+      <tr>
+        <td><%= todoit_list.title %></td>
+        <td><%= todoit_list.description %></td>
+        <td><%= todoit_list.text %></td>
+        <td><%= link_to 'Show', todoit_list %></td>
+        <td><%= link_to 'Edit', edit_todoit_list_path(todoit_list) %></td>
+        <td><%= link_to 'Destroy', todoit_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Todoit list', new_todoit_list_path %>
