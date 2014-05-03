@@ -1,87 +1,69 @@
 require 'spec_helper'
- 
-describe "Creating Todoit lists" do
-  it "redirects to the Todoit list index page on success" do
-    visit "/Todoit_lists"
+
+describe "Creating todoit lists" do
+  def create_todoit_list(options={})
+    options[:title] ||= "My todoit list"
+    options[:description] ||= "This is my todoit list."
+
+    visit "/todoit_lists"
     click_link "New Todoit list"
-    expect(page).to have_content("New Todoit_list")
+    expect(page).to have_content("New todoit_list")
 
-    fill_in "Title", with: "My Todoit list"
-    fill_in "Description", with: "This is what I'm doing today."
+    fill_in "Title", with: options[:title]
+    fill_in "Description", with: options[:description]
     click_button "Create Todoit list"
-
-    expect(page).to have_content("My Todoit list")
   end
 
-  it "displays an error when the Todoit list has no title" do
+  it "redirects to the todoit list index page on success" do
+    create_todoit_list
+    expect(page).to have_content("My todoit list")
+  end
+
+  it "displays an error when the todo list has no title" do
     expect(TodoitList.count).to eq(0)
 
-    visit "/Todoit_lists"
-    click_link "New Todoit list"
-    expect(page).to have_content("New Todoit_list")
-
-    fill_in "Title", with: ""
-    fill_in "Description", with: "This is what I'm doing today."
-    click_button "Create Todoit list"
+    create_todoit_list title: ""
 
     expect(page).to have_content("error")
     expect(TodoitList.count).to eq(0)
 
-    visit "/Todoit_lists"
+    visit "/todoit_lists"
     expect(page).to_not have_content("This is what I'm doing today.")
   end
 
-  it "displays an error when the Todoit list has a title less than 3 characters" do
+  it "displays an error when the todoit list has a title less than 3 characters" do
     expect(TodoitList.count).to eq(0)
 
-    visit "/Todoit_lists"
-    click_link "New Todoit list"
-    expect(page).to have_content("New Todoit_list")
-
-    fill_in "Title", with: "Hi"
-    fill_in "Description", with: "This is what I'm doing today."
-    click_button "Create Todoit list"
+    create_todoit_list title: "Hi"
 
     expect(page).to have_content("error")
     expect(TodoitList.count).to eq(0)
 
-    visit "/Todoit_lists"
+    visit "/todoit_lists"
     expect(page).to_not have_content("This is what I'm doing today.")
   end
 
-  it "displays an error when the Todoit list has no description" do
+  it "displays an error when the todo list has no description" do
     expect(TodoitList.count).to eq(0)
 
-    visit "/Todoit_lists"
-    click_link "New Todoit list"
-    expect(page).to have_content("New Todoit_list")
-
-    fill_in "Title", with: "Grocery list"
-    fill_in "Description", with: ""
-    click_button "Create Todoit list"
+    create_todoit_list title: "Grocery list", description: ""
 
     expect(page).to have_content("error")
     expect(TodoitList.count).to eq(0)
 
-    visit "/Todoit_lists"
+    visit "/todoit_lists"
     expect(page).to_not have_content("Grocery list")
   end
 
-  it "displays an error when the Todoit list has no description" do
+  it "displays an error when the todoit list has no description" do
     expect(TodoitList.count).to eq(0)
 
-    visit "/Todoit_lists"
-    click_link "New Todoit list"
-    expect(page).to have_content("New Todoit_list")
-
-    fill_in "Title", with: "Grocery list"
-    fill_in "Description", with: "Food"
-    click_button "Create Todoit list"
+    create_todoit_list title: "Grocery list", description: "Food"
 
     expect(page).to have_content("error")
     expect(TodoitList.count).to eq(0)
 
-    visit "/Todoit_lists"
+    visit "/todoit_lists"
     expect(page).to_not have_content("Grocery list")
   end
 end
