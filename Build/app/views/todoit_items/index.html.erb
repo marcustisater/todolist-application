@@ -1,2 +1,9 @@
 <h1><%= @todoit_list.title %></h1>
 <p>Find me in app/views/todoit_items/index.html.erb</p>
+
+
+<ul class="todoit_items">
+  <% @todoit_list.todoit_items.each do |todoit_items| %>
+  <li><%= todoit_item.content %></li>
+  <% end %>
+</ul>
