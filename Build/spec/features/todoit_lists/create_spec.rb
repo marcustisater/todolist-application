@@ -1,5 +1,5 @@
 require 'spec_helper'
-
+ 
 describe "Creating Todoit lists" do
   it "redirects to the Todoit list index page on success" do
     visit "/Todoit_lists"
@@ -11,12 +11,12 @@ describe "Creating Todoit lists" do
     click_button "Create Todoit list"
 
     expect(page).to have_content("My Todoit list")
- end
+  end
 
   it "displays an error when the Todoit list has no title" do
     expect(TodoitList.count).to eq(0)
 
-    visit "/todoit_lists"
+    visit "/Todoit_lists"
     click_link "New Todoit list"
     expect(page).to have_content("New Todoit_list")
 
@@ -27,9 +27,9 @@ describe "Creating Todoit lists" do
     expect(page).to have_content("error")
     expect(TodoitList.count).to eq(0)
 
-    visit "/todoit_lists"
+    visit "/Todoit_lists"
     expect(page).to_not have_content("This is what I'm doing today.")
- end
+  end
 
   it "displays an error when the Todoit list has a title less than 3 characters" do
     expect(TodoitList.count).to eq(0)
@@ -47,6 +47,41 @@ describe "Creating Todoit lists" do
 
     visit "/Todoit_lists"
     expect(page).to_not have_content("This is what I'm doing today.")
- end
+  end
 
+  it "displays an error when the Todoit list has no description" do
+    expect(TodoitList.count).to eq(0)
+
+    visit "/Todoit_lists"
+    click_link "New Todoit list"
+    expect(page).to have_content("New Todoit_list")
+
+    fill_in "Title", with: "Grocery list"
+    fill_in "Description", with: ""
+    click_button "Create Todoit list"
+
+    expect(page).to have_content("error")
+    expect(TodoitList.count).to eq(0)
+
+    visit "/Todoit_lists"
+    expect(page).to_not have_content("Grocery list")
+  end
+
+  it "displays an error when the Todoit list has no description" do
+    expect(TodoitList.count).to eq(0)
+
+    visit "/Todoit_lists"
+    click_link "New Todoit list"
+    expect(page).to have_content("New Todoit_list")
+
+    fill_in "Title", with: "Grocery list"
+    fill_in "Description", with: "Food"
+    click_button "Create Todoit list"
+
+    expect(page).to have_content("error")
+    expect(TodoitList.count).to eq(0)
+
+    visit "/Todoit_lists"
+    expect(page).to_not have_content("Grocery list")
+  end
 end
