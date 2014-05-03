@@ -1,4 +1,5 @@
 Todoit::Application.routes.draw do
+  get "todoit_items/index"
   resources :todoit_lists
   root 'todoit_lists#index'
 
