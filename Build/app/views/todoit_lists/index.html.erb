@@ -14,7 +14,7 @@
 
   <tbody>
     <% @todoit_lists.each do |todoit_list| %>
-      <tr>
+      <tr id="<%= dom_id(todoit_list) %>">
         <td><%= todoit_list.title %></td>
         <td><%= todoit_list.description %></td>
         <td><%= todoit_list.text %></td>
