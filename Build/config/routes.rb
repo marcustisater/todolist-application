@@ -1,6 +1,7 @@
 Todoit::Application.routes.draw do
-  get "todoit_items/index"
-  resources :todoit_lists
+  resources :todoit_lists do
+    resources :todoit_items
+  end 
   root 'todoit_lists#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
