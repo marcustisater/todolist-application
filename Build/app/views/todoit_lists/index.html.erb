@@ -1,5 +1,13 @@
 <h1>Listing todoit_lists</h1>
 
+<style>
+  
+  .table {
+    background: black;
+  }
+
+</style>
+
 <table>
   <thead>
     <tr>
@@ -12,7 +20,7 @@
 
   <tbody>
     <% @todoit_lists.each do |todoit_list| %>
-      <tr id="<%= dom_id(todoit_list) %>">
+      <tr class="table" id="<%= dom_id(todoit_list) %>">
         <%= todoit_list.title %>
         <%= todoit_list.description %>
         <%= todoit_list.text %>
