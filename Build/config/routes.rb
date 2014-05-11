@@ -1,6 +1,10 @@
 Todoit::Application.routes.draw do
   resources :todoit_lists do
-    resources :todoit_items
+    resources :todoit_items do
+      member do
+        patch :complete
+      end 
+    end 
   end 
   root 'todoit_lists#index'
 
