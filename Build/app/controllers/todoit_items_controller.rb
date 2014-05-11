@@ -41,6 +41,18 @@ class TodoitItemsController < ApplicationController
       end
   end 
 
+  def destroy 
+    @todoit_item = @todoit_list.todoit_items.find(params[:id])
+    if @todoit_item.destroy
+      flash[:success] = "Todoit list item was deleted"
+    else 
+      flash[:error] = "Todoit list was not deleted"
+    end
+
+    redirect_to todoit_list_todoit_items_path
+
+  end 
+
   def url_options
     { todoit_list_id: params[:todoit_list_id] }.merge(super)
   end
