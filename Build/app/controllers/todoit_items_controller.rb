@@ -1,18 +1,19 @@
 class TodoitItemsController < ApplicationController
-  def index
+  
+  before_action :find_todoit_list
 
-    @todoit_list = TodoitList.find(params[:todoit_list_id])
+  def index
 
   end
 
   def new
-    @todoit_list = TodoitList.find(params[:todoit_list_id])
+    
     @todoit_item = @todoit_list.todoit_items.new 
   end 
 
 
   def create
-    @todoit_list = TodoitList.find(params[:todoit_list_id])
+    
     @todoit_item = @todoit_list.todoit_items.new(todoit_item_params)
     if @todoit_item.save
       flash[:success] = "Added todoit list item."
@@ -24,7 +25,7 @@ class TodoitItemsController < ApplicationController
   end
 
   def edit
-      @todoit_list = Todoit.find(params[:todoit_list_id])
+     
       @todoit_item = @todoit_list.todoit_items.find(params[:id])
   end 
 
@@ -44,10 +45,16 @@ class TodoitItemsController < ApplicationController
     { todoit_list_id: params[:todoit_list_id] }.merge(super)
   end
 
+  private 
+  def find_todoit_list
+    @todoit_list = TodoitList.find(params[:todoit_list_id])
+  end 
+
   private
   def todoit_item_params
     params[:todoit_item].permit(:content)
   end
+
 
 
 end
