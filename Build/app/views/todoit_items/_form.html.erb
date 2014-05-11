@@ -3,12 +3,10 @@
 
   <ul>
     <% @todoit_item.errors.full_messages.each do |msg| %>
-       <li><%= msg %></li>
+     <li><%= msg %></li>
     <% end %>
-     </ul>
-  </div>
-<% end %>
-
+  </ul>
+ </div>
 
 
 <%= form.label :content %>
