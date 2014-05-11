@@ -6,9 +6,10 @@ class TodoitList < ActiveRecord::Base
 
     validates :title, presence: true 
     validates :title, length: { minimum: 3}
-    validates :description, presence: true 
     validates :description, presence: true
     validates :description, length: { minimum: 5}
+    validates :text, presence: true
+    validates :text, length: { minimum: 5}
 
     def has_completed_items?
       todoit_items.completed.size > 0 

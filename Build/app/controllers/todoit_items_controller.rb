@@ -25,8 +25,7 @@ class TodoitItemsController < ApplicationController
   end
 
   def edit
-     
-      @todoit_item = @todoit_list.todoit_items.find(params[:id])
+
   end 
 
   def update
