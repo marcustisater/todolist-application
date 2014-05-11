@@ -23,7 +23,7 @@ it 'is succesful with valid content' do
   click_button "Save"
   expect(page).to have_content ("Saved todoit list item")
   todoit_item.reload
-  expect(todoit_item.title).to eq ("Many Milk, Many drinks")
+  expect(todoit_item.content).to eq ("Many Milk, Many drinks")
   end 
 
 

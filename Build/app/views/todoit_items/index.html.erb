@@ -2,7 +2,11 @@
 
 <ul class="todoit_items">
   <% @todoit_list.todoit_items.each do |todoit_item| %>
-  <li id="<%= dom_id(todoit_item %>"><%= todoit_item.content %></li>
+  <li id="<%= dom_id(todoit_item %>">
+    <%= todoit_item.content %>
+    <%= link_to "Edit", edit_todoit_list_todoit_item_path(todoit_item) %>
+
+  </li>
   <% end %>
 </ul>
 
