@@ -4,9 +4,6 @@ describe 'adding todoit items' do
   let!(:todoit_list) { TodoList.create(title: "Shopping", description: "buy carrots")}
 
 
-
-
-
   it " is succesful with valid content" do
 
     visit_todoit_list(todoit_list)
