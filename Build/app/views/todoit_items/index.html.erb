@@ -3,8 +3,14 @@
 <ul class="todoit_items">
   <% @todoit_list.todoit_items.each do |todoit_item| %>
   <li id="<%= dom_id(todoit_item) %>">
-    <%= todoit_item.content %>
+
+    <td><%= todoit_item.completed_at %>
+    <td><%= todoit_item.content %></td>
+    <td>
+
+    <% if todoit_item.completed_at.blank? %>
     <%= link_to "Mark as complete", complete_todoit_list_todoit_item_path(todoit_item), method: :patch %>
+    <% end %>
     <%= link_to "Edit", edit_todoit_list_todoit_item_path(todoit_item) %>
     <%= link_to "Delete", todoit_list_todoit_item_path(todoit_item), method: :delete, data: { confirm: "Are you sure?" } %>
   </li>
