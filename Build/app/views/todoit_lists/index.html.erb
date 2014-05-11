@@ -1,33 +1,25 @@
-<h1>Listing todoit_lists</h1>
-
-<style>
-  
-  .table {
-    background: black;
-  }
-
-</style>
+<h1>Listing todo_lists</h1>
 
 <table>
   <thead>
     <tr>
       <th>Title</th>
       <th>Description</th>
-      <th>Text</th>
       <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @todoit_lists.each do |todoit_list| %>
-      <tr class="table" id="<%= dom_id(todoit_list) %>">
-        <%= todoit_list.title %>
-        <%= todoit_list.description %>
-        <%= todoit_list.text %>
-        <%= link_to "List Items", todoit_list_todoit_items_path(todoit_list) %>
-        <%= link_to 'Show', todoit_list %>
-        <%= link_to 'Edit', edit_todoit_list_path(todoit_list) %>
-       <%= link_to 'Destroy', todoit_list, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <tr id="<%= dom_id(todoit_list) %>">
+        <td><%= todoit_list.title %></td>
+        <td><%= todoit_list.description %></td>
+        <td>
+          <%= link_to "List Items", todoit_list_todoit_items_path(todoit_list) %>
+          <%= link_to 'Show', todoit_list %>
+          <%= link_to 'Edit', edit_todoit_list_path(todoit_list) %>
+          <%= link_to 'Destroy', todoit_list, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
