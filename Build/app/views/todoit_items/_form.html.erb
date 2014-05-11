@@ -1,12 +1,14 @@
+<% if @todoit_item.errors.any? %>
 <div id="error_explanation">
-  <h2><%= pluralize(@todoit_list.errors.count, "error") %> prohibited this todoit item from being saved:</h2>
+  <h2><%= pluralize(@todoit_item.errors.count, "error") %> prohibited this todo item from being saved:</h2>
 
   <ul>
     <% @todoit_item.errors.full_messages.each do |msg| %>
-     <li><%= msg %></li>
+      <li><%= msg %></li>
     <% end %>
   </ul>
- </div>
+</div>
+<% end %>
 
 
 <%= form.label :content %>

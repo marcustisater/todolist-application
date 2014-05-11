@@ -1,7 +1,4 @@
-
-<h1> <%= @todoit_list.title %> - Editing the ToDoIt Item </h1>
+<h1><%= @todoit_list.title %> - Editing Todo List Item</h1>
 <%= form_for [@todoit_list, @todoit_item] do |form| %>
-
   <%= render partial: form %>
-
 <% end %>

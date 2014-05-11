@@ -2,14 +2,14 @@
 
 <ul class="todoit_items">
   <% @todoit_list.todoit_items.each do |todoit_item| %>
-  <li id="<%= dom_id(todoit_item %>">
+  <li id="<%= dom_id(todoit_item) %>">
     <%= todoit_item.content %>
     <%= link_to "Edit", edit_todoit_list_todoit_item_path(todoit_item) %>
-
+    <%= link_to "Delete", todoit_list_todoit_item_path(todoit_item), method: :delete, data: { confirm: "Are you sure?" } %>
   </li>
   <% end %>
 </ul>
 
 <p>
-  <%= link_to "New Todoit Item", new_todoit_list_todoit_item_path %>
+  <%= link_to "New todoit Item", new_todoit_list_todoit_item_path %>
 </p>
