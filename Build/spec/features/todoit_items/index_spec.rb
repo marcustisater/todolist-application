@@ -4,15 +4,6 @@ describe 'viewing todoit items' do
   let!(:todoit_list) { TodoList.create(title: "Shopping", description: "buy carrots")}
 
 
-  def visit_todoit_list(list)
-
-      visit "/todoit_lists"
-  within "#todoit_list_#{list.id}" do
-    click_link "List Items"
-   end 
-
-  end
-
   it 'displays the title of the todoit list' do
     visit_todoit_list(todoit_list)
     within("h1") do 
