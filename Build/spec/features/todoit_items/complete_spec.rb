@@ -15,4 +15,18 @@ describe 'complete my todoit items' do
     expect(todoit_item.completed_at).to_not be_nil
   end 
 
+  context "with completed items" do
+
+    let!(:todoit_list) { TodoList.create(title: "Shopping", description: "buy carrots", completed: "5min ago")}
+
+    it "shows completed items as completed" do
+      visit_todoit_list todoit_list
+      within dom_id_for(completed_todoit_item) do
+        expect(page).to have_content(completed_todoit_item_at)
+
+    end
+
+  end
+
+
 end 
