@@ -27,4 +27,32 @@ it 'is succesful with valid content' do
   end 
 
 
+it 'is unsuccesful with no content' do
+  visit_todoit_list(todoit_list)
+  wihin("#todoit_items_#{todoit_item.id}") do
+    click_link "Edit"
+  end
+
+  fill_in "Content", with: ""
+  click_button "Save"
+  expect(page).to have_content ("Saved todoit list item")
+  expect(page).to have_content ("Content can't be blank")
+  todoit_item.reload
+  expect(todoit_item.content).to eq ("Many Milk, Many drinks")
+  end 
+
+
+  it 'is unsuccesful with not enough content' do
+  visit_todoit_list(todoit_list)
+  wihin("#todoit_items_#{todoit_item.id}") do
+    click_link "Edit"
+  end
+
+  fill_in "Content", with: "1"
+  click_button "Save"
+  expect(page).to have_content ("Saved todoit list item")
+  expect(page).to have_content ("Content can't be blank")
+  todoit_item.reload
+  expect(todoit_item.content).to eq ("Many Milk, Many drinks")
+  end 
 end 
