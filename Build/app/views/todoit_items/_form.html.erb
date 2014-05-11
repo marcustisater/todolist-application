@@ -1,0 +1,17 @@
+<div id="error_explanation">
+  <h2><%= pluralize(@todoit_list.errors.count, "error") %> prohibited this todoit item from being saved:</h2>
+
+  <ul>
+    <% @todoit_item.errors.full_messages.each do |msg| %>
+       <li><%= msg %></li>
+    <% end %>
+     </ul>
+  </div>
+<% end %>
+
+
+
+<%= form.label :content %>
+<%= form.text_field :content %>
+
+<%= form.submit "Save" %>
