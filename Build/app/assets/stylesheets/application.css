@@ -10,8 +10,8 @@
  *
  *= require_self
  *= require_tree .
+ *= require bootstrap.min
  */
-
 
 
 div.alert {
