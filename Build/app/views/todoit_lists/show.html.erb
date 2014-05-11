@@ -1,19 +1,26 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @todoit_list.title %></h1>
 
-<p>
-  <strong>Title:</strong>
-  <%= @todoit_list.title %>
-</p>
+<h2><%= @todoit_list.description %></h2>
 
-<p>
-  <strong>Description:</strong>
-  <%= @todoit_list.description %>
-</p>
+<% if @todoit_list.has_incomplete_items? %>
+<h3>Incomplete Items:</h3>
 
-<p>
-  <strong>Text:</strong>
-  <%= @todoit_list.text %>
-</p>
+<ul>
+  <% @todoit_list.todoit_items.incomplete.each do |todoit_item| %>
+  <li><%= todoit_item.content %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<% if @todoit_list.has_completed_items? %>
+<h3>Complete Items:</h3>
+
+<ul>
+  <% @todoit_list.todoit_items.complete.each do |todoit_item| %>
+  <li><%= todoit_item.content %></li>
+  <% end %>
+</ul>
+<% end %>
 
 <%= link_to 'Edit', edit_todoit_list_path(@todoit_list) %> |
 <%= link_to 'Back', todoit_lists_path %>
