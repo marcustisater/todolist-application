@@ -53,6 +53,12 @@ class TodoitItemsController < ApplicationController
 
   end 
 
+  def complete
+    @todoit_item = @todoit_list.todoit_items.find(params[:id])
+    @todoit_item.update_attribute(:completed_at, Time.now)
+    redirect_to todoit_list_todoit_items_path, notice: "Todoit item is marked as completed"
+  end
+
   def url_options
     { todoit_list_id: params[:todoit_list_id] }.merge(super)
   end
