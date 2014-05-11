@@ -1,13 +1,10 @@
 <h1><%= @todoit_list.title %></h1>
-<p>Find me in app/views/todoit_items/index.html.erb</p>
-
 
 <ul class="todoit_items">
-  <% @todoit_list.todoit_items.each do |todoit_items| %>
+  <% @todoit_list.todoit_items.each do |todoit_item| %>
   <li><%= todoit_item.content %></li>
   <% end %>
 </ul>
-
 
 <p>
   <%= link_to "New Todoit Item", new_todoit_list_todoit_item_path %>
