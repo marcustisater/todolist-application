@@ -1,5 +1,5 @@
 <h1>ToDoIt Lists</h1>
-
+<%= link_to 'New Todoit list', new_todoit_list_path , class: 'add_new_list'  %>
 <% @todoit_lists.each do |todoit_list| %>
 <div class="todoit_list" id="<%= dom_id(todoit_list) %>">
       <tr id="<%= dom_id(todoit_list) %>">
@@ -16,4 +16,4 @@
 
 <br class="clear">
 
-<%= link_to 'New Todoit list', new_todoit_list_path %>
+

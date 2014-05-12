@@ -13,11 +13,29 @@
  
  */
 
+h1 {
+  text-align: center;
+  color: purple;
+}
+
+.todoit_list h2 {
+     color: purple !important;
+     font-size: 22pt;
+    }
+
+  p {
+    color: black;
+    font-size: 12pt;
+  }
 
 div.alert {
   border: 2px solid #aaa;
   padding: 10px;
   border-radius: 3px;
+  background: #aaa;
+  color: white !important;
+  text-align: center !important;
+  font-size: 14pt;
 
 }
 
@@ -25,16 +43,130 @@ div.flash.success {
   border: 2px  solid green;
   color: green;
   border-radius: 3px;
+  background: green;
+  color: white !important;
+  text-align: center !important;
+  font-size: 14pt;
+  padding-top: 5px !important;
+  margin-top: 10px !important;
 }
 
 div.flash.error {
   border: 2px  solid red;
   color: red;
   border-radius: 3px;
+  background: red;
+  color: white !important;
+  text-align: center !important;
+  font-size: 14pt;
 }
 
 div.flash.notice {
   border: 2px  solid blue;
   color: blue;
   border-radius: 3px;
+  background: blue;
+  color: white !important;
+  text-align: center !important;
+  font-size: 14pt;
 }
+
+
+.todoit_items {
+  padding: 15px;
+}
+
+td {
+  padding: 15px;
+  color: purple;
+  font-size: 14pt !important;
+}
+
+.newtodolist a {
+  color: blue;
+  font-size: 16pt;
+  padding: 15px;
+}
+
+.new_todoit_item {
+  padding: 25px;
+}
+
+#todoit_item_content {
+  border-radius: 10px;
+  height: 25px;
+  border: 5px solid purple;
+}
+
+#submit {
+  background: green;
+}
+
+#save_item {
+  color: white;
+}
+
+/* button styleish */
+
+.button_item {
+  -moz-box-shadow:inset 0px 1px 0px 0px #e184f3;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #e184f3;
+  box-shadow:inset 0px 1px 0px 0px #e184f3;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #c123de), color-stop(1, #a20dbd) );
+  background:-moz-linear-gradient( center top, #c123de 5%, #a20dbd 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c123de', endColorstr='#a20dbd');
+  background-color:#c123de;
+  -webkit-border-top-left-radius:6px;
+  -moz-border-radius-topleft:6px;
+  border-top-left-radius:6px;
+  -webkit-border-top-right-radius:6px;
+  -moz-border-radius-topright:6px;
+  border-top-right-radius:6px;
+  -webkit-border-bottom-right-radius:6px;
+  -moz-border-radius-bottomright:6px;
+  border-bottom-right-radius:6px;
+  -webkit-border-bottom-left-radius:6px;
+  -moz-border-radius-bottomleft:6px;
+  border-bottom-left-radius:6px;
+  text-indent:0px;
+  border:3px solid #a511c0;
+  display:inline-block;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  font-style:normal;
+  height:50px;
+  line-height:50px;
+  width:100px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:1px 1px 0px #9b14b3;
+}
+.button_item:hover {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #a20dbd), color-stop(1, #c123de) );
+  background:-moz-linear-gradient( center top, #a20dbd 5%, #c123de 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a20dbd', endColorstr='#c123de');
+  background-color:#a20dbd;
+}.button_item:active {
+  position:relative;
+  top:1px;
+}
+
+.field_with_errors {
+  text-align: center !important;
+}
+
+.error_explanation {
+  text-align: center !important;
+}
+
+.add_new_list {
+  color: blue;
+  font-size: 16pt;
+  padding: 15px;
+}
+
+
+
+

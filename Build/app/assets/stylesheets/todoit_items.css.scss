@@ -7,6 +7,7 @@
   background: #6F1DAD;
   border: 4px solid #C770E9;
   border-radius: 2px;
+  text-align: center !important;
 
 
 
@@ -15,6 +16,8 @@
     color: #FFFFFF !important;
     text-decoration: none;
     padding: 15px;
+    list-style: none !important;
+    list-style-image: none;
 
     &:hover {
       background: none !important;
