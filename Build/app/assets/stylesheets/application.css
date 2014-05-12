@@ -40,10 +40,10 @@ div.alert {
 }
 
 div.flash.success {
-  border: 2px  solid green;
+  border: 5px  solid #45A354;
   color: green;
   border-radius: 3px;
-  background: green;
+  background: #45A354;
   color: white !important;
   text-align: center !important;
   font-size: 14pt;
@@ -52,23 +52,27 @@ div.flash.success {
 }
 
 div.flash.error {
-  border: 2px  solid red;
+  border: 5px  solid #F13D3D;
   color: red;
   border-radius: 3px;
-  background: red;
+  background: #F13D3D;
   color: white !important;
   text-align: center !important;
   font-size: 14pt;
+  padding-top: 5px !important;
+  margin-top: 10px !important;
 }
 
 div.flash.notice {
-  border: 2px  solid blue;
+  border: 5px solid #3098FA;
   color: blue;
   border-radius: 3px;
-  background: blue;
+  background: #3098FA;
   color: white !important;
   text-align: center !important;
   font-size: 14pt;
+  padding-top: 5px !important;
+  margin-top: 10px !important;
 }
 
 
