@@ -1,4 +1,5 @@
-<h1>ToDoIt Lists</h1>
+<h1></h1>
+<p><br><br>
 <%= link_to 'New Todoit list', new_todoit_list_path , class: 'add_new_list'  %>
 <% @todoit_lists.each do |todoit_list| %>
 <div class="todoit_list" id="<%= dom_id(todoit_list) %>">
@@ -6,10 +7,10 @@
         <h2><%= todoit_list.title %></h2>
         <p><%= todoit_list.description %></p>
         <ul class="functions">
-          <li> <%= link_to "List Items", todoit_list_todoit_items_path(todoit_list) %> </li>
-          <li> <%= link_to 'Show', todoit_list %></li>
-          <li> <%= link_to 'Edit', edit_todoit_list_path(todoit_list) %></li>
-          <li> <%= link_to 'Destroy', todoit_list, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          <li class="list_to" > <%= link_to "List Items", todoit_list_todoit_items_path(todoit_list) %> </li>
+          <li class="show_to"> <%= link_to 'Show', todoit_list %></li>
+          <li class="edit_to"> <%= link_to 'Edit', edit_todoit_list_path(todoit_list) %></li>
+          <li class="delete_to"> <%= link_to 'Destroy', todoit_list, method: :delete, data: { confirm: 'Are you sure?' } %></li>
         </ul>
     </div>
 <% end %>

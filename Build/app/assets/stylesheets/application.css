@@ -9,7 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require_tree 
  
  */
 
@@ -165,11 +165,6 @@ td {
   text-align: center !important;
 }
 
-.add_new_list {
-  color: blue;
-  font-size: 16pt;
-  padding: 15px;
-}
 
 
 
