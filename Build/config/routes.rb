@@ -1,6 +1,10 @@
 Todoit::Application.routes.draw do
   resources :users
 
+  
+
+  
+
   resources :todoit_lists do
     resources :todoit_items do
       member do
