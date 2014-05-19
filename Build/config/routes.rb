@@ -1,7 +1,6 @@
 Todoit::Application.routes.draw do
-  get "user_sessions/new"
-  get "user_sessions/create"
   resources :users
+  resources :user_sessions, only: [:new , :create]
 
   
 
